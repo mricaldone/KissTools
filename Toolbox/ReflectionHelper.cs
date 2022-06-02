@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Linq;
 using System.Globalization;
 
-namespace Toolbox
+namespace KissTools.Toolbox
 {
     public static class ReflectionHelper
     {

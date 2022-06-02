@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace Toolbox.Tests
+namespace KissTools.Toolbox.Tests
 {
     public class ConvertionHelperShouldNot
     {

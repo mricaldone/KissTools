@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Toolbox
+namespace KissTools.Toolbox
 {
     public static class AutoMapper
     {

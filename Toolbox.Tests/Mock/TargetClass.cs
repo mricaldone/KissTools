@@ -1,4 +1,4 @@
-﻿namespace Toolbox.Tests.Mock
+﻿namespace KissTools.Toolbox.Tests.Mock
 {
     internal class TargetClass
     {

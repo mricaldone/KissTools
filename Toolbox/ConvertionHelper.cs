@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Toolbox
+namespace KissTools.Toolbox
 {
     public class ConvertionHelper
     {

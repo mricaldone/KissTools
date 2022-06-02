@@ -1,7 +1,7 @@
-﻿using Toolbox.Tests.Mock;
+﻿using KissTools.Toolbox.Tests.Mock;
 using Xunit;
 
-namespace Toolbox.Tests
+namespace KissTools.Toolbox.Tests
 {
     public class AutoMapperShouldRiseError
     {
