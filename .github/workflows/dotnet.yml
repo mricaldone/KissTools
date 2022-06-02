@@ -27,5 +27,5 @@ jobs:
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: Toolbox/Toolbox.csproj
-        PACKAGE_NAME: mricaldone
+        PACKAGE_NAME: mricaldone.ToolBox
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
