@@ -1,8 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	
 	<PropertyGroup>
-		<Version>1.0.0</Version>
+		<Authors>Matias Ricaldone</Authors>
+		<RepositoryUrl>https://github.com/mricaldone/dotnet-toolbox</RepositoryUrl>
+		<RepositoryType>https://github.com/mricaldone/dotnet-toolbox</RepositoryType>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<Version>1.0.0</Version>
 	</PropertyGroup>
 	
 </Project>
