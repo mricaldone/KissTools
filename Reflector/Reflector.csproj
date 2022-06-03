@@ -2,10 +2,10 @@
 
 	<PropertyGroup>
 		<Authors>Matias Ricaldone</Authors>
-		<RepositoryUrl>https://github.com/mricaldone/dotnet-toolbox</RepositoryUrl>
+		<RepositoryUrl>https://github.com/mricaldone/KissTools</RepositoryUrl>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<PackageId>KissTools.Reflector</PackageId>
-		<PackageProjectUrl>https://github.com/mricaldone/dotnet-toolbox</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/mricaldone/KissTools</PackageProjectUrl>
 		<PackageTags>reflection</PackageTags>
 	</PropertyGroup>
 
