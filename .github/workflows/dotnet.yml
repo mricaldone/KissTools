@@ -26,22 +26,4 @@ jobs:
     - name: Pack
       run: dotnet pack -p:PackageVersion=1.0.1
     - name: Publish
-      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
-    - name: Publish AutoMapper
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with:
-        PROJECT_FILE_PATH: AutoMapper/AutoMapper.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_FILE_PATH: Version.xml
-    - name: Publish Transmutator
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with:
-        PROJECT_FILE_PATH: Transmutator/Transmutator.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_FILE_PATH: Version.xml
-    - name: Publish Reflector
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with:
-        PROJECT_FILE_PATH: Reflector/Reflector.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_FILE_PATH: Version.xml
+      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}} --skip-duplicate -n 1
