@@ -1,7 +1,7 @@
 ﻿using Xunit;
-using KissTools.Toolbox.Tests.Mock;
+using KissTools.Tests.Mock;
 
-namespace KissTools.Toolbox.Tests
+namespace KissTools.Tests
 {
     public class AutoMapperShould
     {

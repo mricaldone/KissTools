@@ -4,9 +4,9 @@ using System.Reflection;
 using System.Linq;
 using System.Globalization;
 
-namespace KissTools.Toolbox
+namespace KissTools
 {
-    public static class ReflectionHelper
+    public static class Reflector
     {
         public static String[] GetProperties(object obj)
         {
@@ -36,17 +36,17 @@ namespace KissTools.Toolbox
             return GetValue(obj, GetProperty(obj, propName));
         }
 
-        public static String GetBestMatchProperty(object targetObj, String sourcePropName, MapperOptions options)
+        public static String GetBestMatchProperty(object targetObj, String sourcePropName, ReflectorOptions options)
         {
             foreach (String targetProp in GetProperties(targetObj))
             {
                 String targetPropName = targetProp;
-                if ((options & MapperOptions.IGNORE_CASE) == MapperOptions.IGNORE_CASE)
+                if ((options & ReflectorOptions.IGNORE_CASE) == ReflectorOptions.IGNORE_CASE)
                 {
                     targetPropName = targetPropName.ToLower();
                     sourcePropName = sourcePropName.ToLower();
                 }
-                if ((options & MapperOptions.IGNORE_UNDERSCORE) == MapperOptions.IGNORE_UNDERSCORE)
+                if ((options & ReflectorOptions.IGNORE_UNDERSCORE) == ReflectorOptions.IGNORE_UNDERSCORE)
                 {
                     targetPropName = targetPropName.Replace("_", "");
                     sourcePropName = sourcePropName.Replace("_", "");

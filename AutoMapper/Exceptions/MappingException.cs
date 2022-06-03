@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KissTools.Toolbox
+namespace KissTools
 {
     public class MappingException : Exception
     {

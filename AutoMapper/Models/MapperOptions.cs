@@ -1,4 +1,4 @@
-﻿namespace KissTools.Toolbox
+﻿namespace KissTools
 {
     public enum MapperOptions
     {

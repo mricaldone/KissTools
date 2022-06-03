@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace KissTools.Toolbox
+namespace KissTools
 {
     public static class AutoMapper
     {
@@ -44,14 +44,14 @@ namespace KissTools.Toolbox
                 try
                 {
                     _options = options;
-                    foreach (String propName in ReflectionHelper.GetProperties(_sourceObj))
+                    foreach (String propName in Reflector.GetProperties(_sourceObj))
                     {
                         try
                         {
                             sourcePropName = propName;
-                            targetPropName = ReflectionHelper.GetBestMatchProperty(targetObj, sourcePropName, options);
-                            object sourcePropValue = ReflectionHelper.GetValue(_sourceObj, sourcePropName);
-                            ReflectionHelper.SetValue(targetObj, targetPropName, sourcePropValue, (_options & MapperOptions.FORCE_TYPE) == MapperOptions.FORCE_TYPE);
+                            targetPropName = Reflector.GetBestMatchProperty(targetObj, sourcePropName, (ReflectorOptions) options);
+                            object sourcePropValue = Reflector.GetValue(_sourceObj, sourcePropName);
+                            Reflector.SetValue(targetObj, targetPropName, sourcePropValue, (_options & MapperOptions.FORCE_TYPE) == MapperOptions.FORCE_TYPE);
                         }
                         catch (Exception ex)
                         {
@@ -94,10 +94,10 @@ namespace KissTools.Toolbox
                 {
                     try
                     {
-                        targetPropName = ReflectionHelper.GetPropertyName(targetProp);
-                        sourcePropName = ReflectionHelper.GetPropertyName(_sourceProp);
-                        object sourcePropValue = ReflectionHelper.GetValue(_sourceObj, sourcePropName);
-                        ReflectionHelper.SetValue(_targetObj, targetPropName, sourcePropValue, (_options & MapperOptions.FORCE_TYPE) == MapperOptions.FORCE_TYPE);
+                        targetPropName = Reflector.GetPropertyName(targetProp);
+                        sourcePropName = Reflector.GetPropertyName(_sourceProp);
+                        object sourcePropValue = Reflector.GetValue(_sourceObj, sourcePropName);
+                        Reflector.SetValue(_targetObj, targetPropName, sourcePropValue, (_options & MapperOptions.FORCE_TYPE) == MapperOptions.FORCE_TYPE);
                     }
                     catch (Exception ex)
                     {

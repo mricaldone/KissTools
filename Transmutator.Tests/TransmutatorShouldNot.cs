@@ -1,9 +1,9 @@
 ﻿using System;
 using Xunit;
 
-namespace KissTools.Toolbox.Tests
+namespace KissTools.Tests
 {
-    public class ConvertionHelperShouldNot
+    public class TransmutatorShouldNot
     {
         [Fact]
         public void ConvertStringToBoolean()
@@ -11,7 +11,7 @@ namespace KissTools.Toolbox.Tests
             //Arrange
             String vin = "true_";
             //Act & Assert
-            Assert.Throws<FormatException>(() => ConvertionHelper.ConvertType<Boolean>(vin));
+            Assert.Throws<FormatException>(() => Transmutator.ConvertType<Boolean>(vin));
         }
 
         [Fact]
@@ -20,7 +20,7 @@ namespace KissTools.Toolbox.Tests
             //Arrange
             String vin = "10_";
             //Act & Assert
-            Assert.Throws<FormatException>(() => ConvertionHelper.ConvertType<Int32>(vin));
+            Assert.Throws<FormatException>(() => Transmutator.ConvertType<Int32>(vin));
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace KissTools.Toolbox.Tests
             //Arrange
             String vin = "19.30_";
             //Act & Assert
-            Assert.Throws<FormatException>(() => ConvertionHelper.ConvertType<Double>(vin));
+            Assert.Throws<FormatException>(() => Transmutator.ConvertType<Double>(vin));
         }
 
     }

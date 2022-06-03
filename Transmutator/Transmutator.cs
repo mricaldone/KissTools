@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 
-namespace KissTools.Toolbox
+namespace KissTools
 {
-    public class ConvertionHelper
+    public static class Transmutator
     {
         public static T ConvertType<T>(object obj)
         {

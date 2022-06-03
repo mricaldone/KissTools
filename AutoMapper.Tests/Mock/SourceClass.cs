@@ -1,4 +1,4 @@
-﻿namespace KissTools.Toolbox.Tests.Mock
+﻿namespace KissTools.Tests.Mock
 {
     internal class SourceClass
     {
