@@ -26,4 +26,4 @@ jobs:
     - name: Pack
       run: dotnet pack -p:PackageVersion=1.0.1
     - name: Publish
-      run: dotnet nuget push *.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate -n 1
+      run: dotnet nuget push **\*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate -n 1
