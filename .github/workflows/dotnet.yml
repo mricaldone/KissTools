@@ -24,6 +24,6 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack -p:PackageVersion=1.0.1
+      run: dotnet pack -p:PackageVersion=${{env.VERSION}}
     - name: Publish
       run: dotnet nuget push **\*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} -n 1
