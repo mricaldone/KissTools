@@ -24,7 +24,8 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack -p:PackageVersion=2.1.0
+      run: cat version.properties >> $VERSION 
+      run: dotnet pack -p:PackageVersion=${VERSION}
     - name: Publish AutoMapper
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
