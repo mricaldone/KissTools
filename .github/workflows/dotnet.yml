@@ -23,20 +23,22 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack -p:PackageVersion=2.1.0
     - name: Publish AutoMapper
-      uses: brandedoutcast/publish-nuget@v2.5.2
+      uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: AutoMapper/AutoMapper.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         VERSION_FILE_PATH: Version.xml
     - name: Publish Transmutator
-      uses: brandedoutcast/publish-nuget@v2.5.3
+      uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: Transmutator/Transmutator.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         VERSION_FILE_PATH: Version.xml
     - name: Publish Reflector
-      uses: brandedoutcast/publish-nuget@v2.5.4
+      uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: Reflector/Reflector.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
