@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflector", "Reflector\Refl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflector.Tests", "Reflector.Tests\Reflector.Tests.csproj", "{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Networking", "Networking\Networking.csproj", "{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
