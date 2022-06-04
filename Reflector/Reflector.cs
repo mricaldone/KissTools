@@ -36,17 +36,17 @@ namespace KissTools
             return GetValue(obj, GetProperty(obj, propName));
         }
 
-        public static String GetBestMatchProperty(object targetObj, String sourcePropName, ReflectorOptions options)
+        public static String GetBestMatchProperty(object targetObj, String sourcePropName, ReflectorOption options)
         {
             foreach (String targetProp in GetProperties(targetObj))
             {
                 String targetPropName = targetProp;
-                if ((options & ReflectorOptions.IGNORE_CASE) == ReflectorOptions.IGNORE_CASE)
+                if ((options & ReflectorOption.IGNORE_CASE) == ReflectorOption.IGNORE_CASE)
                 {
                     targetPropName = targetPropName.ToLower();
                     sourcePropName = sourcePropName.ToLower();
                 }
-                if ((options & ReflectorOptions.IGNORE_UNDERSCORE) == ReflectorOptions.IGNORE_UNDERSCORE)
+                if ((options & ReflectorOption.IGNORE_UNDERSCORE) == ReflectorOption.IGNORE_UNDERSCORE)
                 {
                     targetPropName = targetPropName.Replace("_", "");
                     sourcePropName = sourcePropName.Replace("_", "");

@@ -7,15 +7,15 @@ namespace KissTools
     {
         public static Mapper<T1> Map<T1>(T1 obj)
         {
-            return new Mapper<T1>(obj, MapperOptions.NONE);
+            return new Mapper<T1>(obj, MapperOption.NONE);
         }
 
         public class Mapped<T1, T2>
         {
             private T1 _sourceObj;
             private T2 _targetObj;
-            private MapperOptions _options;
-            internal Mapped(T1 sourceObj, T2 targetObj, MapperOptions options)
+            private MapperOption _options;
+            internal Mapped(T1 sourceObj, T2 targetObj, MapperOption options)
             {
                 _sourceObj = sourceObj;
                 _targetObj = targetObj;
@@ -31,14 +31,14 @@ namespace KissTools
         public class Mapper<T1>
         {
             private T1 _sourceObj;
-            private MapperOptions _options;
-            internal Mapper(T1 sourceObj, MapperOptions options)
+            private MapperOption _options;
+            internal Mapper(T1 sourceObj, MapperOption options)
             {
                 _sourceObj = sourceObj;
                 _options = options;
             }
 
-            public Mapped<T1,T2> InTo<T2>(T2 targetObj, MapperOptions options = MapperOptions.NONE)
+            public Mapped<T1,T2> InTo<T2>(T2 targetObj, MapperOption options = MapperOption.NONE)
             {
                 String targetPropName = "", sourcePropName = "";
                 try
@@ -49,13 +49,13 @@ namespace KissTools
                         try
                         {
                             sourcePropName = propName;
-                            targetPropName = Reflector.GetBestMatchProperty(targetObj, sourcePropName, (ReflectorOptions) options);
+                            targetPropName = Reflector.GetBestMatchProperty(targetObj, sourcePropName, (ReflectorOption) options);
                             object sourcePropValue = Reflector.GetValue(_sourceObj, sourcePropName);
-                            Reflector.SetValue(targetObj, targetPropName, sourcePropValue, (_options & MapperOptions.FORCE_TYPE) == MapperOptions.FORCE_TYPE);
+                            Reflector.SetValue(targetObj, targetPropName, sourcePropValue, (_options & MapperOption.FORCE_TYPE) == MapperOption.FORCE_TYPE);
                         }
                         catch (Exception ex)
                         {
-                            if ((_options & MapperOptions.IGNORE_ERRORS) != MapperOptions.IGNORE_ERRORS) throw ex;
+                            if ((_options & MapperOption.IGNORE_ERRORS) != MapperOption.IGNORE_ERRORS) throw ex;
                         }
                         
                     }
@@ -64,8 +64,8 @@ namespace KissTools
                 catch (InvalidCastException ex)
                 {
                     String action = $"When trying to map {typeof(T1).Name}.{sourcePropName} into {typeof(T2).Name}.{targetPropName}";
-                    if ((MapperOptions.FORCE_TYPE & options) != MapperOptions.FORCE_TYPE)
-                        throw new MappingException($"{ex.Message}. {action}. Use {nameof(MapperOptions)}.{nameof(MapperOptions.FORCE_TYPE)} to force conversion.");
+                    if ((MapperOption.FORCE_TYPE & options) != MapperOption.FORCE_TYPE)
+                        throw new MappingException($"{ex.Message}. {action}. Use {nameof(MapperOption)}.{nameof(MapperOption.FORCE_TYPE)} to force conversion.");
                     else
                         throw new MappingException($"{ex.Message}. {action}.");
                 }
@@ -77,9 +77,9 @@ namespace KissTools
             private Expression<Func<T1, object>> _sourceProp;
             private T1 _sourceObj;
             private T2 _targetObj;
-            private MapperOptions _options;
+            private MapperOption _options;
 
-            internal Linker(T1 sourceObj, T2 targetObj, Expression<Func<T1, object>> sourceProp, MapperOptions options)
+            internal Linker(T1 sourceObj, T2 targetObj, Expression<Func<T1, object>> sourceProp, MapperOption options)
             {
                 _sourceProp = sourceProp;
                 _targetObj = targetObj;
@@ -97,19 +97,19 @@ namespace KissTools
                         targetPropName = Reflector.GetPropertyName(targetProp);
                         sourcePropName = Reflector.GetPropertyName(_sourceProp);
                         object sourcePropValue = Reflector.GetValue(_sourceObj, sourcePropName);
-                        Reflector.SetValue(_targetObj, targetPropName, sourcePropValue, (_options & MapperOptions.FORCE_TYPE) == MapperOptions.FORCE_TYPE);
+                        Reflector.SetValue(_targetObj, targetPropName, sourcePropValue, (_options & MapperOption.FORCE_TYPE) == MapperOption.FORCE_TYPE);
                     }
                     catch (Exception ex)
                     {
-                        if ((_options & MapperOptions.IGNORE_ERRORS) != MapperOptions.IGNORE_ERRORS) throw ex;
+                        if ((_options & MapperOption.IGNORE_ERRORS) != MapperOption.IGNORE_ERRORS) throw ex;
                     }
                     return new Mapped<T1, T2>(_sourceObj, _targetObj, _options);
                 }
                 catch (InvalidCastException ex)
                 {
                     String action = $"When trying to map {typeof(T1).Name}.{sourcePropName} into {typeof(T2).Name}.{targetPropName}";
-                    if ((MapperOptions.FORCE_TYPE & _options) != MapperOptions.FORCE_TYPE)
-                        throw new MappingException($"{ex.Message}. {action}. Use {nameof(MapperOptions)}.{nameof(MapperOptions.FORCE_TYPE)} to force conversion.");
+                    if ((MapperOption.FORCE_TYPE & _options) != MapperOption.FORCE_TYPE)
+                        throw new MappingException($"{ex.Message}. {action}. Use {nameof(MapperOption)}.{nameof(MapperOption.FORCE_TYPE)} to force conversion.");
                     else
                         throw new MappingException($"{ex.Message}. {action}.");
                 }

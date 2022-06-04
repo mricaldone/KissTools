@@ -26,7 +26,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { perimeter = v };
             //Act
-            AutoMapper.Map(s).InTo(t, MapperOptions.IGNORE_CASE);
+            AutoMapper.Map(s).InTo(t, MapperOption.IGNORE_CASE);
             //Assert
             Assert.Equal(v, t.Perimeter);
         }
@@ -39,7 +39,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { Distance_To_Sun = v };
             //Act
-            AutoMapper.Map(s).InTo(t, MapperOptions.IGNORE_UNDERSCORE);
+            AutoMapper.Map(s).InTo(t, MapperOption.IGNORE_UNDERSCORE);
             //Assert
             Assert.Equal(v, t.DistanceToSun);
         }
@@ -52,7 +52,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { Orbital_speed = v };
             //Act
-            AutoMapper.Map(s).InTo(t, MapperOptions.IGNORE_UNDERSCORE | MapperOptions.IGNORE_CASE);
+            AutoMapper.Map(s).InTo(t, MapperOption.IGNORE_UNDERSCORE | MapperOption.IGNORE_CASE);
             //Assert
             Assert.Equal(v, t.OrbitalSpeed);
         }
@@ -77,7 +77,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { HasMoons = "true" };
             //Act
-            AutoMapper.Map(s).InTo(t, MapperOptions.FORCE_TYPE);
+            AutoMapper.Map(s).InTo(t, MapperOption.FORCE_TYPE);
             //Assert
             Assert.True(t.HasMoons);
         }

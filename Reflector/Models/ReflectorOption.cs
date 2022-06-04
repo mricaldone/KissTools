@@ -1,6 +1,6 @@
 ﻿namespace KissTools
 {
-    public enum ReflectorOptions
+    public enum ReflectorOption
     {
         NONE                = 0,
         IGNORE_CASE         = 1,

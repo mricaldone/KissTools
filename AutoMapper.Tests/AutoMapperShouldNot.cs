@@ -37,7 +37,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass() { WithMoons = false };
             SourceClass s = new SourceClass() { HasMoons = "yes" };
             //Act
-            AutoMapper.Map(s).InTo(t, MapperOptions.FORCE_TYPE | MapperOptions.IGNORE_ERRORS).Link(o => o.HasMoons).InTo(o => o.WithMoons);
+            AutoMapper.Map(s).InTo(t, MapperOption.FORCE_TYPE | MapperOption.IGNORE_ERRORS).Link(o => o.HasMoons).InTo(o => o.WithMoons);
             //Assert
             Assert.False(t.WithMoons);
         }
@@ -49,7 +49,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass() { HasMoons = false };
             SourceClass s = new SourceClass() { HasMoons = "true" };
             //Act
-            AutoMapper.Map(s).InTo(t, MapperOptions.IGNORE_ERRORS);
+            AutoMapper.Map(s).InTo(t, MapperOption.IGNORE_ERRORS);
             //Assert
             Assert.False(t.HasMoons);
         }

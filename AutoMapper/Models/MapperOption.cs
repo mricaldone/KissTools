@@ -1,6 +1,6 @@
 ﻿namespace KissTools
 {
-    public enum MapperOptions
+    public enum MapperOption
     {
         NONE                = 0,
         IGNORE_CASE         = 1,

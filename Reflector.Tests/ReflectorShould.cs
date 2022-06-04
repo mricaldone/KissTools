@@ -24,7 +24,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { _LastName = "Hawking" };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "_LastName", ReflectorOptions.NONE);
+            String r = Reflector.GetBestMatchProperty(obj, "_LastName", ReflectorOption.NONE);
             //Assert
             Assert.Equal("_LastName", r);
         }
@@ -35,7 +35,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { _LastName = "Hawking" };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "_Lastname", ReflectorOptions.IGNORE_CASE);
+            String r = Reflector.GetBestMatchProperty(obj, "_Lastname", ReflectorOption.IGNORE_CASE);
             //Assert
             Assert.Equal("_LastName", r);
         }
@@ -46,7 +46,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { _LastName = "Hawking" };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "Last_Name", ReflectorOptions.IGNORE_UNDERSCORE);
+            String r = Reflector.GetBestMatchProperty(obj, "Last_Name", ReflectorOption.IGNORE_UNDERSCORE);
             //Assert
             Assert.Equal("_LastName", r);
         }
@@ -57,7 +57,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { _LastName = "Hawking" };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "last_name", ReflectorOptions.IGNORE_CASE | ReflectorOptions.IGNORE_UNDERSCORE);
+            String r = Reflector.GetBestMatchProperty(obj, "last_name", ReflectorOption.IGNORE_CASE | ReflectorOption.IGNORE_UNDERSCORE);
             //Assert
             Assert.Equal("_LastName", r);
         }
@@ -116,7 +116,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { addressnumber = 1000, Address_Number = 1001 };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "addressnumber", ReflectorOptions.NONE);
+            String r = Reflector.GetBestMatchProperty(obj, "addressnumber", ReflectorOption.NONE);
             //Assert
             Assert.Equal("addressnumber", r);
         }
@@ -127,7 +127,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { addressnumber = 1000, Address_Number = 1001 };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "AddressNumber", ReflectorOptions.IGNORE_CASE);
+            String r = Reflector.GetBestMatchProperty(obj, "AddressNumber", ReflectorOption.IGNORE_CASE);
             //Assert
             Assert.Equal("addressnumber", r);
         }
@@ -138,7 +138,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { addressnumber = 1000, Address_Number = 1001 };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "address_number", ReflectorOptions.IGNORE_UNDERSCORE);
+            String r = Reflector.GetBestMatchProperty(obj, "address_number", ReflectorOption.IGNORE_UNDERSCORE);
             //Assert
             Assert.Equal("addressnumber", r);
         }
@@ -149,7 +149,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { addressnumber = 1000, Address_Number = 1001 };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "AddressNumber", ReflectorOptions.IGNORE_CASE | ReflectorOptions.IGNORE_UNDERSCORE);
+            String r = Reflector.GetBestMatchProperty(obj, "AddressNumber", ReflectorOption.IGNORE_CASE | ReflectorOption.IGNORE_UNDERSCORE);
             //Assert
             Assert.Equal("Address_Number", r);
         }

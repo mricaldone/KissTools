@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutator", "Transmutator\Transmutator.csproj", "{94C4BC2B-A950-4A18-8AE8-FEF89066F690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transmutator", "Transmutator\Transmutator.csproj", "{94C4BC2B-A950-4A18-8AE8-FEF89066F690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transmutator.Tests", "Transmutator.Tests\Transmutator.Tests.csproj", "{751F8A11-238D-40CF-A1DF-4F4DD9BE15AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transmutator.Tests", "Transmutator.Tests\Transmutator.Tests.csproj", "{751F8A11-238D-40CF-A1DF-4F4DD9BE15AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapper", "AutoMapper\AutoMapper.csproj", "{BDADE75C-D563-4C7E-BA27-AB3E341A2ABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMapper", "AutoMapper\AutoMapper.csproj", "{BDADE75C-D563-4C7E-BA27-AB3E341A2ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapper.Tests", "AutoMapper.Tests\AutoMapper.Tests.csproj", "{81106829-CF6A-4839-A726-0806027E314D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMapper.Tests", "AutoMapper.Tests\AutoMapper.Tests.csproj", "{81106829-CF6A-4839-A726-0806027E314D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflector", "Reflector\Reflector.csproj", "{83AD7727-3498-4AA7-8D2E-8AB670FBDC21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflector", "Reflector\Reflector.csproj", "{83AD7727-3498-4AA7-8D2E-8AB670FBDC21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflector.Tests", "Reflector.Tests\Reflector.Tests.csproj", "{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflector.Tests", "Reflector.Tests\Reflector.Tests.csproj", "{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Networking", "Networking\Networking.csproj", "{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AB6C752-9E6D-45E0-8CBE-6B381C1EDB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{620B9473-15CA-45BC-9FF8-E30AFEC1FB81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

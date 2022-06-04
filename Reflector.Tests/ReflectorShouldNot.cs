@@ -13,7 +13,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { _LastName = "Hawking" };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "_Last_Name", ReflectorOptions.NONE);
+            String r = Reflector.GetBestMatchProperty(obj, "_Last_Name", ReflectorOption.NONE);
             //Assert
             Assert.Null(r);
         }
@@ -24,7 +24,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { _LastName = "Hawking" };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "_Last_name", ReflectorOptions.IGNORE_CASE);
+            String r = Reflector.GetBestMatchProperty(obj, "_Last_name", ReflectorOption.IGNORE_CASE);
             //Assert
             Assert.Null(r);
         }
@@ -35,7 +35,7 @@ namespace KissTools.Tests
             //Arrange
             TestClass obj = new TestClass() { _LastName = "Hawking" };
             //Act
-            String r = Reflector.GetBestMatchProperty(obj, "Last_name", ReflectorOptions.IGNORE_UNDERSCORE);
+            String r = Reflector.GetBestMatchProperty(obj, "Last_name", ReflectorOption.IGNORE_UNDERSCORE);
             //Assert
             Assert.Null(r);
         }

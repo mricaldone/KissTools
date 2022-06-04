@@ -22,7 +22,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { Gravity = "Big" };
             //Act & Assert
-            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t, MapperOptions.FORCE_TYPE));
+            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t, MapperOption.FORCE_TYPE));
         }
         [Fact]
         public void WithDifferentAttributeNameAndDifferentParseableType()
@@ -41,7 +41,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { HasMoons = "yes" };
             //Act & Assert
-            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t, MapperOptions.FORCE_TYPE).Link(o => o.HasMoons).InTo(o => o.WithMoons));
+            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t, MapperOption.FORCE_TYPE).Link(o => o.HasMoons).InTo(o => o.WithMoons));
         }
 
         [Fact]
