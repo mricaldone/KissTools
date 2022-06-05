@@ -3,6 +3,7 @@
     internal class TargetClass
     {
         public string Name { get; set; }
+        public string CodeName { get; set; }
         public double Perimeter { get; set; }
         public double DistanceToSun { get; set; }
         public double OrbitalSpeed { get; set; }

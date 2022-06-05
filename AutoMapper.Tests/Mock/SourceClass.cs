@@ -3,6 +3,7 @@
     internal class SourceClass
     {
         public string Name { get; set; }
+        public string CodeName { get; set; }
         public double perimeter { get; set; }
         public double Distance_To_Sun { get; set; }
         public double Orbital_speed { get; set; }

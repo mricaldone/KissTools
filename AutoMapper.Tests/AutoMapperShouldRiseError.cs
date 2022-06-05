@@ -12,7 +12,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { HasMoons = "true" };
             //Act & Assert
-            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t));
+            Assert.Throws<MappingException>(() => AutoMapper.From(s).MapTo(t).Go());
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { Gravity = "Big" };
             //Act & Assert
-            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t, MapperOption.FORCE_TYPE));
+            Assert.Throws<MappingException>(() => AutoMapper.From(s).MapTo(t, MapperOption.FORCE_TYPE).Go());
         }
         [Fact]
         public void WithDifferentAttributeNameAndDifferentParseableType()
@@ -31,7 +31,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { HasMoons = "true" };
             //Act & Assert
-            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t).Link(o => o.HasMoons).InTo(o => o.WithMoons));
+            Assert.Throws<MappingException>(() => AutoMapper.From(s).MapTo(t).Link(o => o.HasMoons).InTo(o => o.WithMoons).Go());
         }
 
         [Fact]
@@ -41,7 +41,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass();
             SourceClass s = new SourceClass() { HasMoons = "yes" };
             //Act & Assert
-            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t, MapperOption.FORCE_TYPE).Link(o => o.HasMoons).InTo(o => o.WithMoons));
+            Assert.Throws<MappingException>(() => AutoMapper.From(s).MapTo(t, MapperOption.FORCE_TYPE).Link(o => o.HasMoons).InTo(o => o.WithMoons).Go());
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace KissTools.Tests
             TargetClass t = new TargetClass() { HasMoons = false };
             SourceClass s = new SourceClass() { HasMoons = "true" };
             //Act & Assert
-            Assert.Throws<MappingException>(() => AutoMapper.Map(s).InTo(t));
+            Assert.Throws<MappingException>(() => AutoMapper.From(s).MapTo(t).Go());
         }
     }
 }
