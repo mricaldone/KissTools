@@ -65,7 +65,7 @@ AutoMapper.From(sourceObj).MapTo(targetObj).Ignore(sO => sO.sP1).Ignore(sO => sO
 #### Go
 The `Go()` statement starts the mapping process. After `Go()` you can add another target object using `MapTo()` again:
 ```
-AutoMapper.From(sourceObj).MapTo(targetObj_1).Go().MapTo(targetObj_2).Go().[...].MapTo(targetObj_n).Go();
+AutoMapper.From(sourceObj).MapTo(targetObj_1).Go().MapTo(targetObj_2).Go().MapTo(...).Go().MapTo(targetObj_n).Go();
 ```
 #### Options
 Here you have a a summary of all posible options:
