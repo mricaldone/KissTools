@@ -10,65 +10,60 @@ namespace KissTools.Tests
         public void MapAttributeWithSameName()
         {
             //Arrange
-            const string v = "Saturn";
             TargetClass t = new TargetClass();
-            SourceClass s = new SourceClass() { Name = v };
+            SourceClass s = new SourceClass() { Name = "Saturn" };
             //Act
             AutoMapper.From(s).MapTo(t).Go();
             //Assert
-            Assert.Equal(v, t.Name);
+            Assert.Equal("Saturn", t.Name);
         }
 
         [Fact]
         public void MapAttributeWithSameNameIgnoringCase()
         {
             //Arrange
-            const double v = 58.232;
             TargetClass t = new TargetClass();
-            SourceClass s = new SourceClass() { perimeter = v };
+            SourceClass s = new SourceClass() { perimeter = 58.232 };
             //Act
             AutoMapper.From(s).MapTo(t, MapperOption.IGNORE_CASE).Go();
             //Assert
-            Assert.Equal(v, t.Perimeter);
+            Assert.Equal(58.232, t.Perimeter);
         }
 
         [Fact]
         public void MapAttributeWithSameNameIgnoringUnderscore()
         {
             //Arrange
-            const double v = 9.53707032;
             TargetClass t = new TargetClass();
-            SourceClass s = new SourceClass() { Distance_To_Sun = v };
+            SourceClass s = new SourceClass() { Distance_To_Sun = 9.53707032 };
             //Act
             AutoMapper.From(s).MapTo(t, MapperOption.IGNORE_UNDERSCORE).Go();
             //Assert
-            Assert.Equal(v, t.DistanceToSun);
+            Assert.Equal(9.53707032, t.DistanceToSun);
         }
 
         [Fact]
         public void MapAttributeWithSameNameIgnoringCaseAndUnderscore()
         {
             //Arrange
-            const double v = 9672.4;
             TargetClass t = new TargetClass();
-            SourceClass s = new SourceClass() { Orbital_speed = v };
+            SourceClass s = new SourceClass() { Orbital_speed = 9672.4 };
             //Act
             AutoMapper.From(s).MapTo(t, MapperOption.IGNORE_UNDERSCORE | MapperOption.IGNORE_CASE).Go();
             //Assert
-            Assert.Equal(v, t.OrbitalSpeed);
+            Assert.Equal(9672.4, t.OrbitalSpeed);
         }
 
         [Fact]
         public void MapAttributeWithDifferentName()
         {
             //Arrange
-            const double v = 1013.14;
             TargetClass t = new TargetClass();
-            SourceClass s = new SourceClass() { atmosfericPressure = v };
+            SourceClass s = new SourceClass() { atmosfericPressure = 1013.14 };
             //Act
             AutoMapper.From(s).MapTo(t).Link(o => o.atmosfericPressure).InTo(o => o.Pressure).Go();
             //Assert
-            Assert.Equal(v, t.Pressure);
+            Assert.Equal(1013.14, t.Pressure);
         }
         
         [Fact]
@@ -140,8 +135,7 @@ namespace KissTools.Tests
             //Act
             AutoMapper.From(s).MapTo(t).Ignoring(o => o.CodeName).Go();
             //Assert
-            Assert.Equal("Mercury", t.Name);
-            Assert.Null(t.CodeName);
+            Assert.Equal(new[] { "Mercury", null }, new[] { t.Name, t.CodeName });
         }
 
         [Fact]
@@ -168,8 +162,7 @@ namespace KissTools.Tests
             //Act
             AutoMapper.From(s).MapTo(t1).Go().MapTo(t2).Go();
             //Assert
-            Assert.Equal("Mercury", t1.Name);
-            Assert.Equal("Mercury", t2.Name);
+            Assert.Equal(new[] { "Mercury", "Mercury" } , new[] { t1.Name, t2.Name });
         }
 
     }

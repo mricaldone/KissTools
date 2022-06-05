@@ -6,9 +6,9 @@ namespace KissTools
 {
     public static class AutoMapper
     {
-        public static Mapper<T1> From<T1>(T1 obj)
+        public static Mapper<T1> From<T1>(T1 obj, MapperOption options = MapperOption.NONE)
         {
-            return new Mapper<T1>(obj);
+            return new Mapper<T1>(obj, options);
         }
 
         public class MapBuild<T1, T2>
@@ -66,7 +66,7 @@ namespace KissTools
                             if ((_options & MapperOption.IGNORE_ERRORS) != MapperOption.IGNORE_ERRORS) throw ex;
                         }
                     }
-                    return new Mapper<T1>(_sourceObj);
+                    return new Mapper<T1>(_sourceObj, _options);
                 }
                 catch (InvalidCastException ex)
                 {
@@ -82,12 +82,19 @@ namespace KissTools
         public class Mapper<T1>
         {
             private T1 _sourceObj;
-            internal Mapper(T1 sourceObj)
+            private MapperOption _options;
+            internal Mapper(T1 sourceObj, MapperOption options)
             {
                 _sourceObj = sourceObj;
+                _options = options;
             }
 
-            public MapBuild<T1, T2> MapTo<T2>(T2 targetObj, MapperOption options = MapperOption.NONE)
+            public MapBuild<T1, T2> MapTo<T2>(T2 targetObj)
+            {
+                return MapTo(targetObj, _options);
+            }
+
+            public MapBuild<T1, T2> MapTo<T2>(T2 targetObj, MapperOption options)
             {
                 Dictionary<string, string> mappedProperties = new Dictionary<string, string>();
                 string[] sourcePropertiesNames = Reflector.GetProperties(_sourceObj);
